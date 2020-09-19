@@ -2,16 +2,18 @@ import React from 'react';
 import './App.css';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/Menu'
+import MenuFunction from './components/MenuFunction'
 
 function App() {
   return (
     <div>
       <Navbar dark color='primary'>
         <div className="container">
-          <NavbarBrand href='/'>Restorant AJ</NavbarBrand>
+          <NavbarBrand href='/'>Coursera React Course</NavbarBrand>
         </div>
       </Navbar>
-      <Menu/>
+      {/* <Menu/> */}
+      <MenuFunction/>
     </div>
   );
 }
