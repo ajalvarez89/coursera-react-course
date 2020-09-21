@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/Menu'
 import { DISHES } from './shared/dishes'
 // import MenuFunction from './components/MenuFunction'
 
 function  App() {
 
-  const [dishes, setDishes] = useState(DISHES)
-  const [collapsed, setCollapsed] = useState(true);
-  const toggleNavbar = () => setCollapsed(!collapsed);
-
+  const [dishes] = useState(DISHES)
 
   return (
     <div>
