@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink} from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
 import Menu from './components/Menu'
-import MenuFunction from './components/MenuFunction'
+import { DISHES } from './shared/dishes'
+// import MenuFunction from './components/MenuFunction'
 
 function  App() {
-  const [collapsed, setCollapsed] = useState(true);
 
+  const [dishes, setDishes] = useState(DISHES)
+  const [collapsed, setCollapsed] = useState(true);
   const toggleNavbar = () => setCollapsed(!collapsed);
+
 
   return (
     <div>
@@ -15,20 +18,10 @@ function  App() {
         <div className="container">
           <NavbarBrand href='/'>Coursera React Course</NavbarBrand>
         </div>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
       </Navbar>
-      {/* <Menu/> */}
-      <MenuFunction/>
+      <Menu
+        dishes={dishes}
+      />
     </div>
   );
 }
